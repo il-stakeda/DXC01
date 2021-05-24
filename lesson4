@@ -1,0 +1,82 @@
+###### Lesson 4 #######
+
+### 4-1 ###
+docker run hello-world
+
+### 4-2 ###
+docker run -it ubuntu /bin/bash
+cat /etc/lsb-release
+ls /
+uname -rs
+ps aux
+exit
+docker run -d -p 80:80 httpd
+
+### 4-3 ###
+docker ps -a
+
+### 4-4 ###
+docker images
+
+### 4-5 ###
+docker run -it ubuntu /bin/bash
+exit
+docker ps -a
+
+### 4-6 ###
+docker create --name my-hello hello-world
+docker ps -a
+
+### 4-7 ###
+docker start --attach my-hello
+docker ps --last 1
+docker ps
+docker stop jolly_elbakyan
+docker ps
+
+### 4-8 ###
+docker ps -a | grep ubuntu
+docker start loving_mirzakhani
+docker attach loving_mirzakhani
+cat /etc/lsb-release
+docker ps
+docker attach loving_mirzakhani
+ps aux
+exit
+docker ps
+
+### 4-9 ###
+docker ps
+docker exec -it loving_mirzakhan /bin/bash
+ps af
+exit
+
+### 4-10 ###
+docker ps -a
+docker rm my-hello
+docker ps -a
+docker ps -a
+docker container prune
+docker ps -a
+
+### 4-11 ###
+docker ps -a
+docker cp loving_mirzakhani:/etc/lsb-release
+ls
+cat lsb-release
+
+### 4-12 ###
+docker run -d -p 8000:80 --name my-httpd httpd
+vi  index.html
+
+#index.html
+<title>Welcome to my homepage</title>
+<h1>Welcome!!</h1>
+<p>since 2020</p>
+<p>I love Docker!!!</p>
+
+#Document route
+/usr/local/apache2/htdocs
+
+docker cp  ./index.html my-httpd:/usr/local/apache2/htdocs/
+http://<host-name>:8000　
