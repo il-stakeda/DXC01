@@ -1,0 +1,15 @@
+###### Lesson 6 #######
+
+### 6-1 ###
+ip addr show
+
+### 6-2 ###
+docker network ls
+docker network inspect bridge
+
+### 6-3 ###
+docker network create --subnet=172.28.0.0/16 --ip-range=172.28.5.0/24 --gateway=172.28.5.254 mynetwork
+docker network ls
+docker run -it --name mycontainer busybox:1 /bin/sh
+docker network connect --ip 172.28.5.10 mynetwork mycontainer
+docker network inspect mynetwork
