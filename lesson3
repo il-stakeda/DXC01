@@ -1,0 +1,9 @@
+###### Lesson 3 #######
+
+sudo yum -y update
+sudo yum -y install docker
+sudo service docker start
+ps -e | grep dockerd
+sudo usermod -a -G docker ec2-user
+id
+docker -v
