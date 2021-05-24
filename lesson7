@@ -1,7 +1,7 @@
 ###### Lesson 7 #######
 
 ### 7-1 ###
-idocker volume create myvolume
+docker volume create myvolume
 docker volume ls
 docker run -it --mount source=myvolume,target=/myvol busybox:1 
 ls /
