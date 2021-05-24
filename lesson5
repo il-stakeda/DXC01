@@ -1,0 +1,107 @@
+###### Lesson 5 #######
+
+### 5-3 ###
+docker search ubuntu
+docker search -f is-official=true ubuntu
+https://hub.docker.com/
+
+### 5-4 ###
+mkdir work1
+cd work1
+vi Dockerfile
+
+#Dockerfile
+FROM busybox:1
+CMD echo 'Hello, world!
+
+ls
+docker build -t myname/sample:1.0
+docker images
+docker run -it myname/sample:1.0
+docker ps -a
+docker run -it myname/sample:1.0 echo 'Good morning'
+vi Dockerfile
+
+#Dockerfile
+FROM busybox:1
+CMD echo 'Bye-bye, world!'
+
+docker build -t myname/sample:2.0
+docker images
+docker build -t myname/sample:latest .
+docker images
+docker run -it myname/sample:2.0
+docker run -it myname/sample
+
+### 5-5 ###
+docker images
+docker rmi myname/sample:1.0
+docker rmi eac7197f24a9
+docker rmi --force eac7197f24a9
+
+### 5-6 ###
+cd
+mkdir work2
+cd work2
+vi index.html
+
+#index.html
+<html>
+<title>Hello world</title>
+<body>
+<h1>Hello world</h1>
+<p>Welcome to my page!!</p>
+</body>
+</html>
+
+vi Dockerfile
+
+#Dockerfile
+ARG version=1
+FROM busybox:$version
+# httpd container
+ENV HOME="/var/www/html/"
+RUN mkdir $HOME
+COPY index.html $HOME
+
+EXPOSE 80
+
+CMD ["-h", "/var/www/html/"]
+ENTRYPOINT [ "httpd", "-f" ]
+
+docker build -t myname/web:1.0 .
+docker images
+docker run -d -p 80:80 myname/web:1.0
+curl http://localhost
+
+### 5-7 ###
+https://hub.docker.com/
+
+### 5-8 ###
+docker login
+
+### 5-9 ###
+docker images
+docker push myname/web:1.0
+
+### 5-10 ###
+docker rmi myname/web:1.0
+docker images
+docker pull myname/web:1.0
+
+### 5-11 ###
+docker history myname/web:1.0
+
+### 5-12 ###
+docker tag myname/web:1.0 myname/web:latest
+docker images
+
+### 5-13 ###
+docker save myname/web:1.0 > web.1.0.tar
+ls -lh
+
+### 5-14 ###
+docker rmi myname/web:1.0
+docker images
+docker load < web.1.0.tar
+docker images
