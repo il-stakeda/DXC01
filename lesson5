@@ -12,10 +12,10 @@ vi Dockerfile
 
 #Dockerfile
 FROM busybox:1
-CMD echo 'Hello, world!
+CMD echo 'Hello, world!'
 
 ls
-docker build -t myname/sample:1.0
+docker build -t myname/sample:1.0 .
 docker images
 docker run -it myname/sample:1.0
 docker ps -a
@@ -26,7 +26,7 @@ vi Dockerfile
 FROM busybox:1
 CMD echo 'Bye-bye, world!'
 
-docker build -t myname/sample:2.0
+docker build -t myname/sample:2.0 .
 docker images
 docker build -t myname/sample:latest .
 docker images
