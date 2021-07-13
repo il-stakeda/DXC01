@@ -17,6 +17,7 @@ docker volume ls
 sudo ls /var/lib/docker/volumes/boxbin/_data
 
 ### 7-2 ###
+cd
 mkdir binddir
 docker run -it --volume /home/ec2-user/binddir:/work busybox:1
 echo 'Hello' > /work/message
