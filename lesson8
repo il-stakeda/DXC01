@@ -13,6 +13,21 @@ cd mycompose
 cp ../work2/Dockerfile .
 cp ../work2/index.html .
 vi docker-compose.yml
+
+### docker-compose.yml ###
+version: "3.8"
+services:
+  myweb:
+    build: .
+    ports:
+      - "8080:80"
+  apache:
+    image: "httpd:latest"
+    ports:
+      - "80:80"
+## 参考 全コンテナ一括削除（稼働中も全て）##
+docker rm -f $(docker ps -a -q)
+
 docker-compose up -d
 docker-compose ps
 docker-compose down
