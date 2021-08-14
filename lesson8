@@ -70,4 +70,6 @@ services:
 volumes:
     db_data: {}
  
-
+# 確認終了後　後処理
+docker-compose down
+docker-compose ps
