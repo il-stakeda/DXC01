@@ -63,9 +63,7 @@ FROM busybox:$version
 ENV HOME="/var/www/html/"
 RUN mkdir $HOME
 COPY index.html $HOME
-
 EXPOSE 80
-
 CMD ["-h", "/var/www/html/"]
 ENTRYPOINT [ "httpd", "-f" ]
 
