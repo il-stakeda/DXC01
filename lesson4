@@ -39,6 +39,7 @@ docker ps -a | grep ubuntu
 docker start loving_mirzakhani
 docker attach loving_mirzakhani
 cat /etc/lsb-release
+<Ctrl+p  Ctrl+q>  // You need an operation.
 docker ps
 docker attach loving_mirzakhani
 ps aux
