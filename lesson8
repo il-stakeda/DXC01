@@ -25,6 +25,7 @@ services:
     image: "httpd:latest"
     ports:
       - "80:80"
+      
 ## 参考 全コンテナ一括削除（稼働中も全て）##
 docker rm -f $(docker ps -a -q)
 
