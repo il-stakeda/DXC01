@@ -35,7 +35,12 @@ docker-compose down
 docker-compose ps
 
 
-#WordPress(dockercompose.yml)
+# WordPress
+# 上記で作成したDockerfileはそのままに、dockercompose.ymlを以下のように書き直し
+# docker-compose up -d　を実行
+# docker-compose ps　で確認しましょう
+
+# WordPress用のdockercompose.ymlファイルです
 version: '3.3'
 
 services:
