@@ -28,7 +28,7 @@ docker create --name my-hello hello-world
 docker ps -a
 
 ### 4-7 ###
-docker start --attach my-hello    // This doesn't work for bug on Amazon Linux2 // (ex) https://zenn.dev/snowcait/articles/245e1897281446
+docker start --attach my-hello
 docker ps --last 1
 docker ps
 docker stop jolly_elbakyan
