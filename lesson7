@@ -14,7 +14,7 @@ sudo ls /var/lib/docker/volumes
 sudo ls -R /var/lib/docker/volumes/myvolume
 docker run -it --mount source=boxbin,target=/bin busybox:1
 docker volume ls
-sudo ls /var/lib/docker/volumes/boxbin/_data
+sudo ls /var/lib/docker/volumes/myvolume/_data
 
 ### 7-2 ###
 cd
