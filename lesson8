@@ -39,6 +39,7 @@ docker-compose ps
 # 上記で作成したDockerfileはそのままに、dockercompose.ymlを以下のように書き直し
 # docker-compose up -d　を実行
 # docker-compose ps　で確認しましょう
+# ブラウザ上では、http://ホスト名:8000　でアクセスしてみましょう
 
 # WordPress用のdockercompose.ymlファイルです
 version: '3.3'
@@ -69,6 +70,7 @@ services:
        WORDPRESS_DB_NAME: wordpress
 volumes:
     db_data: {}
+ 
  
 # 確認終了後　後処理
 docker-compose down
