@@ -47,6 +47,7 @@ exit
 docker ps
 
 ### 4-9 ###
+docker start loving_mirzakhani
 docker ps
 docker exec -it loving_mirzakhan /bin/bash
 ps af
