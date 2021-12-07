@@ -11,6 +11,7 @@ cat /myvol/message
 docker run -it --mount source=myvolume,target=/work busybox:1 
 ls /work
 cat /work/message
+<Ctrl+p><Ctrl+q>
 sudo ls /var/lib/docker/volumes
 sudo ls -R /var/lib/docker/volumes/myvolume
 docker run -it --mount source=boxbin,target=/bin busybox:1
