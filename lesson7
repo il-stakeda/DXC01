@@ -30,5 +30,6 @@ mkdir binddir
 docker run -it --volume /home/ec2-user/binddir:/work busybox:1
 echo 'Hello' > /work/message
 cat /work/message
+<Ctrl+p><Ctrl+q>
 ls binddir/
 cat binddir/message
