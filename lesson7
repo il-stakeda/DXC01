@@ -7,6 +7,7 @@ docker run -it --mount source=myvolume,target=/myvol busybox:1
 ls /
 echo 'Hello' > /myvol/message
 cat /myvol/message
+<Ctrl+p><Ctrl+q>
 docker run -it --mount source=myvolume,target=/work busybox:1 
 ls /work
 cat /work/message
