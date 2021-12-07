@@ -63,6 +63,7 @@ docker ps -a
 
 ### 4-11 ###
 docker ps -a
+ls
 docker cp loving_mirzakhani:/etc/lsb-release .
 ls
 cat lsb-release
