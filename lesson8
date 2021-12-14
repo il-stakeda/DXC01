@@ -6,6 +6,24 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
+## try ##
+vi docker-compose.yml
+-----------------------------
+version: "3.8"
+services:
+  testweb:
+    image: "httpd"
+    ports:
+      - "80:80"
+-----------------------------
+docker-compose up -d
+docker-compose ps
+docker-compose down
+
+## Same as the following command ##
+docker run --name testweb -d -p 80:80 httpd
+
+
 ### 8-2 ###
 cd
 mkdir mycompose
