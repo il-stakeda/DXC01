@@ -1,2 +1,71 @@
-# DXC01
-DXC01 lesson code
+# sample
+
+mkdir work3
+cd work3
+vi Dockerfile
+
+### Dockerfile ####
+# syntax=docker/dockerfile:1
+FROM python:3
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+WORKDIR /code
+COPY requirements.txt /code/
+RUN pip install -r requirements.txt
+COPY . /code/
+
+vi requirements.txt
+#### requirements.txt ####
+Django>=3.0,<4.0
+psycopg2>=2.8
+
+vi docker-compose.yml
+#### docker-compose.yml ####
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - db
+      
+sudo docker-compose run web django-admin startproject composeexample .
+ls -l
+sudo chown -R $USER:$USER .
+ls -l
+vi composeexample/settings.py
+
+#### composeexample/settings.py ####[
+# Modify only "DATABASES= ......"
+
+import os
+
+[...] 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('POSTGRES_NAME'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': 'db',
+        'PORT': 5432,
+    }
+}
+
+
+docker-compose up
+Please access "http://localhost:80002
