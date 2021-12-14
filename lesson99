@@ -42,7 +42,7 @@ services:
     depends_on:
       - db
       
-sudo docker-compose run web django-admin startproject composeexample .
+docker-compose run web django-admin startproject composeexample .
 ls -l
 sudo chown -R $USER:$USER .
 ls -l
