@@ -14,14 +14,14 @@ services:
   testweb:
     image: "httpd"
     ports:
-      - "80:80"
+      - "8080:80"
 -----------------------------
 docker-compose up -d
 docker-compose ps
 docker-compose down
 
 ## Same as the following command ##
-docker run --name testweb -d -p 80:80 httpd
+docker run --name testweb -d -p 8080:80 httpd
 
 
 ### 8-2 ###
