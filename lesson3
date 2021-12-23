@@ -1,4 +1,4 @@
-## SSM connection ##
+## SSM connection case ##
 
 sudo su --login ec2-user
 
@@ -11,4 +11,10 @@ ps -e | grep dockerd
 sudo usermod -a -G docker ec2-user
 id
 exit
+
+## SSM connection case ##
+
+sudo su --login ec2-user
+
+
 docker -v
