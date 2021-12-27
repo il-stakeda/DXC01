@@ -78,8 +78,11 @@ vi  index.html
 <p>since 2020</p>
 <p>I love Docker!!!</p>
 
+## viが苦手な方は以下のコマンドで同様に上記のindex.htmlファイルを作成可能 ##
+echo '<title>Welcome to my homepage</title><h1>Welcome!!</h1><p>since 2020</p><p>I love Docker!!!</p>' > index.html
+
 #Document route
 /usr/local/apache2/htdocs
 
 docker cp  ./index.html my-httpd:/usr/local/apache2/htdocs/
-http://<host-name>:8000　
+http://<host-name>:8000　 ## ブラウザからアクセスしてください　host-nameは各インスタンスに割り振られたIPアドレスかホスト名です ##
