@@ -13,7 +13,7 @@ id
 exit
 
 ## SSM connection case ##
-
+## 上矢印でもコマンド出力可能 ##
 sudo su --login ec2-user
 
 
