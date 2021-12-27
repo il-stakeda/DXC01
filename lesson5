@@ -14,6 +14,12 @@ vi Dockerfile
 FROM busybox:1
 CMD echo 'Hello, world!'
 
+## vi操作が苦手な方は、以下のコマンドでDockerfileを作成してください ##
+cat << EOF > Dockerfile
+FROM busybox:1
+CMD echo 'Hello, world!'
+EOF
+
 ls
 docker build -t myname/sample:1.0 .
 docker images
@@ -25,6 +31,12 @@ vi Dockerfile
 #Dockerfile
 FROM busybox:1
 CMD echo 'Bye-bye, world!'
+
+## vi操作が苦手な方は、以下のコマンドでDockerfileを作成してください ##
+cat << EOF > Dockerfile
+FROM busybox:1
+CMD echo 'Bye-bye, world!'
+EOF
 
 docker build -t myname/sample:2.0 .
 docker images
@@ -54,6 +66,9 @@ vi index.html
 </body>
 </html>
 
+## vi操作が苦手な方は、以下のコマンドでDockerfileを作成してください ##
+echo '<html><title>Hello world</title><body><h1>Hello world</h1><p>Welcome to my page!!</p></body></html>' > index.html
+
 vi Dockerfile
 
 #Dockerfile
@@ -66,6 +81,20 @@ COPY index.html $HOME
 EXPOSE 80
 CMD ["-h", "/var/www/html/"]
 ENTRYPOINT [ "httpd", "-f" ]
+
+## vi操作が苦手な方は、以下のコマンドでDockerfileを作成してください ##
+cat << EOF > Dockerfile
+ARG version=1
+FROM busybox:\$version
+# httpd container
+ENV HOME="/var/www/html/"
+RUN mkdir \$HOME
+COPY index.html \$HOME
+EXPOSE 80
+CMD ["-h", "/var/www/html/"]
+ENTRYPOINT [ "httpd", "-f" ]
+EOF
+
 
 docker build -t myname/web:1.0 .
 docker images
