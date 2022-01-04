@@ -3,18 +3,28 @@
 sudo su --login ec2-user
 
 ###### Lesson 3 #######
-
+## 手順1 yum ipdate の実行 ##
 sudo yum -y update
+
+## 手順2 yum install の実行 ##
 sudo yum -y install docker
+
+## 手順3 Dockerデーモンの起動 ##
 sudo service docker start
+
+## dockerdの起動確認 ##
 ps -e | grep dockerd
+
+## 手順4 ec2-userユーザをdockerグループに追加する ##
 sudo usermod -a -G docker ec2-user
+
+## dockerグループに属しているか確認するが、一旦exitで抜けないと反映されない ##
 id
 exit
 
-## SSM connection case ##
-## 上矢印でもコマンド出力可能 ##
+## SSM connection 接続してある状態から再度ec2-userユーザに変更 ##
+## (上矢印でもコマンド出力可能) ##
 sudo su --login ec2-user
 
-
+## 手順5 dockerコマンドの実行（バージョン確認） ##
 docker -v
