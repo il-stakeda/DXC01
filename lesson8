@@ -61,7 +61,7 @@ docker-compose ps
 ####　ここはオプションです。もしお時間あれば試してください  ####
 
 # WordPress（ブログ）のコンテナを作成してみましょう
-# 上記で作成したDockerfileはそのままに、dockercompose.ymlを以下のように置き換え（書き直し）
+# 上記で作成したDockerfileはそのままに(無くても良いです）、dockercompose.ymlを以下のように置き換え（書き直し）
 
 # WordPress用のdockercompose.ymlファイルです
 version: '3.3'
