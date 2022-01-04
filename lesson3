@@ -1,5 +1,4 @@
-## SSM connection case ##
-
+## SSM connection する場合はec2-userに変更する ##
 sudo su --login ec2-user
 
 ###### Lesson 3 #######
