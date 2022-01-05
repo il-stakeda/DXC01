@@ -85,4 +85,6 @@ echo '<title>Welcome to my homepage</title><h1>Welcome!!</h1><p>since 2020</p><p
 /usr/local/apache2/htdocs
 
 docker cp  ./index.html my-httpd:/usr/local/apache2/htdocs/
-http://<host-name>:8000　 ## ブラウザからアクセスしてください　host-nameは各インスタンスに割り振られたIPアドレスかホスト名です ##
+
+## ブラウザからアクセスしてください　host-nameは各インスタンスに割り振られたIPアドレスかホスト名です ##
+http://<host-name>:8000　 
