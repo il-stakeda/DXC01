@@ -43,7 +43,7 @@ docker images
 docker build -t myname/sample:latest .
 docker images
 docker run -it myname/sample:2.0
-docker run -it myname/sample
+docker run -it myname/sample        // docker run -it myname/sample:latest　と同じ意味となります
 
 ### 5-5 ###
 docker images
