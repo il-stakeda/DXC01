@@ -21,7 +21,7 @@ CMD echo 'Hello, world!'
 EOF
 
 ls
-docker build -t myname/sample:1.0 .
+docker build -t myname/sample:1.0 .       //mynameはDockerHubのIDで記載しますが、今回はこのままでOK
 docker images
 docker run -it myname/sample:1.0
 docker ps -a
