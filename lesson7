@@ -33,3 +33,9 @@ cat /work/message
 
 ls binddir/
 cat binddir/message
+
+###  (参考）全コンテナを一括削除 ###
+docker rm -f $(docker ps -a -q)
+
+### （参考）全イメージを一括削除 ###
+docker rmi -f $(docker images -q)
