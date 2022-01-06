@@ -12,11 +12,11 @@ ps aux
 exit
 docker run -d -p 80:80 httpd
 
-### 4-3 ###
-docker ps -a
-
 ## ブラウザからアクセスしてみましょう （インスタンスに割り振られたIPアドレスやホスト名をコピーする）##
 http:// <ホストIPアドレス or ホスト名>/
+
+### 4-3 ###
+docker ps -a
 
 ### 4-4 ###
 docker images
