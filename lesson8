@@ -26,7 +26,7 @@ http://<ホストIPアドレス or ホスト名>:8080
 
 docker-compose down
 
-## Same as the following command ##
+##　（参考）以下docker runコマンドと同じことを実行したことになります ##
 docker run --name testweb -d -p 8080:80 httpd
 
 
