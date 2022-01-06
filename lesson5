@@ -105,6 +105,7 @@ curl http://localhost
 http://<ホストIPアドレス or ホスト名>:/
 
 ### 5-7 ###
+## ブラウザからDocker Hubのサイトにアクセスしてみましょう ##
 https://hub.docker.com/
 
 ### 5-8 ###
