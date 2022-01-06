@@ -54,6 +54,9 @@ services:
 ## 全コンテナ一括削除（稼働中も全て）するコマンド ##
 docker rm -f $(docker ps -a -q)
 
+## 全イメージ一括削除するコマンド ##
+docker rmi -f $(docker images -q)
+
 docker-compose up -d
 docker-compose ps
 
@@ -104,7 +107,8 @@ volumes:
 docker-compose up -d
 docker-compose ps
 
-# ブラウザ上では、http://ホスト名:8000　でアクセスしてみましょう
+### ブラウザ上では、http://ホスト名:8000　でアクセスしてみましょう ###
+###  時間があるかたは、簡単にWordPressを利用してブログを作成してみましょう ###
  
 # 確認終了後　後処理
 docker-compose down
