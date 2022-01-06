@@ -34,25 +34,25 @@ docker ps -a
 docker start --attach my-hello
 docker ps --last 1
 docker ps
-docker stop jolly_elbakyan
+docker stop jolly_elbakyan    //コンテナ名は修正
 docker ps
 
 ### 4-8 ###
 docker ps -a | grep ubuntu
-docker start loving_mirzakhani
-docker attach loving_mirzakhani
+docker start loving_mirzakhani    //コンテナ名は修正
+docker attach loving_mirzakhani　　//コンテナ名は修正
 cat /etc/lsb-release
 <Ctrl+p  Ctrl+q>  // You need an operation.
 docker ps
-docker attach loving_mirzakhani
+docker attach loving_mirzakhani　　//コンテナ名は修正
 ps aux
 exit
 docker ps
 
 ### 4-9 ###
-docker start loving_mirzakhani
+docker start loving_mirzakhani　　//コンテナ名は修正
 docker ps
-docker exec -it loving_mirzakhan /bin/bash
+docker exec -it loving_mirzakhan /bin/bash　　//コンテナ名は修正
 ps af
 exit
 
@@ -67,7 +67,7 @@ docker ps -a
 ### 4-11 ###
 docker ps -a
 ls
-docker cp loving_mirzakhani:/etc/lsb-release .
+docker cp loving_mirzakhani:/etc/lsb-release .　　　//コンテナ名は修正
 ls
 cat lsb-release
 
