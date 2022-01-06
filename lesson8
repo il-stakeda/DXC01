@@ -20,6 +20,10 @@ services:
 -----------------------------
 docker-compose up -d
 docker-compose ps
+
+## ブラウザでアクセスしてみましょう ## 　// It Works! が出力されれば成功です
+http://<ホストIPアドレス or ホスト名>:8080
+
 docker-compose down
 
 ## Same as the following command ##
