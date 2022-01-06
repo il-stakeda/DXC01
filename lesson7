@@ -8,21 +8,20 @@ ls /
 echo 'Hello' > /myvol/message
 cat /myvol/message
 <Ctrl+p><Ctrl+q>
+
 docker run -it --mount source=myvolume,target=/work busybox:1 
 ls /work
 cat /work/message
 <Ctrl+p><Ctrl+q>
+
 sudo ls /var/lib/docker/volumes
 sudo ls -R /var/lib/docker/volumes/myvolume
+
 docker run -it --mount source=boxbin,target=/bin busybox:1
 <Ctrl+p><Ctrl+q>
+
 docker volume ls
 sudo ls /var/lib/docker/volumes/myvolume/_data
-docker run -it --mount source=boxbin,target=/bin busybox:1
-<Ctrl+p><Ctrl+q>
-docker volume ls
-sudo ls /var/lib/docker/volumes/boxbin/_data
-
 
 ### 7-2 ###
 cd
@@ -31,5 +30,6 @@ docker run -it --volume /home/ec2-user/binddir:/work busybox:1
 echo 'Hello' > /work/message
 cat /work/message
 <Ctrl+p><Ctrl+q>
+
 ls binddir/
 cat binddir/message
