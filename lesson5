@@ -48,8 +48,8 @@ docker run -it myname/sample        // docker run -it myname/sample:latest　と
 ### 5-5 ###
 docker images
 docker rmi myname/sample:1.0        // コンテナが存在する場合は、オプション--force や -f　を付けます
-docker rmi eac7197f24a9             // イメージIDは修正します
-docker rmi --force eac7197f24a9     // イメージIDは修正します
+docker rmi eac7197f24a9             // myname/sample:2.0 のイメージIDは修正します
+docker rmi --force eac7197f24a9     // myname/sample:2.0 のイメージIDは修正します
 
 ### 5-6 ###
 cd
