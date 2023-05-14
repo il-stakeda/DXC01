@@ -96,9 +96,9 @@ ENTRYPOINT [ "httpd", "-f" ]
 EOF
 
 
-docker build -t myname/web:1.0 .
+docker build -t myname/web:1.0 .       //mynameはDockerHubに登録したユーザー名に置き換えます
 docker images
-docker run -d -p 80:80 myname/web:1.0
+docker run -d -p 80:80 myname/web:1.0　　//mynameはDockerHubに登録したユーザー名に置き換えます
 curl http://localhost
 
 ## ブラウザからアクセスしてみましょう ##
