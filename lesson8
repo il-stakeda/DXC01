@@ -72,8 +72,6 @@ docker-compose ps
 # 上記で作成したDockerfileはそのままに(無くても良いです）、dockercompose.ymlを以下のように置き換え（書き直し）
 
 # WordPress用のdockercompose.ymlファイルです
-version: '3.3'
-
 services:
    db:
      image: mysql:5.7
