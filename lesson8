@@ -39,11 +39,12 @@ cp ../work2/index.html .
 vi docker-compose.yml
 
 ### docker-compose.yml ###
-myweb:
+services:
+  myweb:
     build: .
     ports:
       - "8080:80"
-apache:
+  apache:
     image: "httpd:latest"
     ports:
       - "80:80"
