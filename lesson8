@@ -18,6 +18,22 @@ services:
     ports:
       - "8080:80"
 -----------------------------
+
+## vi を苦手な方は以下で実行してみましょう ##
+cat <<'EOF' > docker-compose.yml
+version: "3.3"
+services:
+  myweb:
+    build: .
+    ports:
+      - "8080:80"
+  apache:
+    image: httpd:latest
+    ports:
+      - "80:80"
+EOF
+#####################
+
 docker-compose up -d
 docker-compose ps
 
