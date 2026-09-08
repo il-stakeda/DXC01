@@ -1,14 +1,15 @@
 ###### Lesson 3 #######
-## 手順1 yum ipdate の実行 ##
-sudo yum -y update
+## 手順1 dnf update の実行 ##
+sudo dnf -y update
 
-## 手順2 yum install の実行 ##
-sudo yum -y install docker
+## 手順2 dnf install の実行 ##
+sudo dnf -y install docker
 
 ## 手順3 Dockerデーモンの起動 ##
-sudo service docker start
+sudo systemctl start docker
 
-## dockerdの起動確認 ##
+## dockerdの起動 & 確認 ##
+sudo systemctl enable docker
 ps -e | grep dockerd
 
 ## 手順4 ec2-userユーザをdockerグループに追加する ##
