@@ -1,79 +1,78 @@
 ###### Lesson 4 #######
 
 ### 4-1 ###
-docker run hello-world
+docker container run hello-world
 
 ### 4-2 ###
-docker run -it ubuntu /bin/bash
+docker container run -it ubuntu /bin/bash
 cat /etc/lsb-release
 ls /
 uname -rs
 ps aux
 exit
-docker run -d -p 80:80 httpd
+docker container run -d -p 80:80 httpd
 
 ## ブラウザからアクセスしてみましょう （インスタンスに割り振られたIPアドレスやホスト名をコピーする）##
 ## ブラウザ上に　It’ｓ Works!　が表示されれば成功 ##
 http:// <ホストIPアドレス or ホスト名>/
 
 ### 4-3 ###
-docker ps -a
+docker container ls -a
 
 ### 4-4 ###
-docker images
+docker image ls
 
 ### 4-5 ###
-docker run -it ubuntu /bin/bash
+docker container run -it ubuntu /bin/bash
 exit
-docker ps -a
+docker container ls -a
 
 ### 4-6 ###
 docker create --name my-hello hello-world
-docker ps -a
+docker container ls -a
 
 ### 4-7 ###
-docker start --attach my-hello
-docker ps --last 1
-docker ps
-docker stop jolly_elbakyan    //コンテナ名は修正
-docker ps
+docker container start --attach my-hello
+docker container ls --last 1
+docker container ls
+docker container stop jolly_elbakyan    //コンテナ名は修正
+docker container ls
 
 ### 4-8 ###
-docker ps -a | grep ubuntu
-docker start loving_mirzakhani    //コンテナ名は修正
-docker attach loving_mirzakhani　　//コンテナ名は修正
+docker container ls -a | grep ubuntu
+docker container start loving_mirzakhani   //コンテナ名は修正
+docker container attach loving_mirzakhani　　//コンテナ名は修正
 cat /etc/lsb-release
 <Ctrl+p  Ctrl+q>  // You need an operation.
-docker ps
-docker attach loving_mirzakhani　　//コンテナ名は修正
+docker container ls
+docker container attach loving_mirzakhani　　//コンテナ名は修正
 ps aux
 exit
-docker ps
+docker container ls
 
 ### 4-9 ###
-docker start loving_mirzakhani　　//コンテナ名は修正
-docker ps
-docker exec -it loving_mirzakhan /bin/bash　　//コンテナ名は修正
+docker container ls
+docker container exec -it loving_mirzakhan /bin/bash　　//コンテナ名は修正
 ps af
 exit
 
 ### 4-10 ###
-docker ps -a
-docker rm my-hello
-docker ps -a
-docker ps -a
+docker container ls -a
+docker container rm my-hello
+docker container ls -a
+docker container ls -a
 docker container prune
-docker ps -a
+docker container ls -a
 
 ### 4-11 ###
-docker ps -a
+docker container ls -a
 ls
-docker cp loving_mirzakhani:/etc/lsb-release .　　　//コンテナ名は修正
+docker container cp loving_mirzakhani:/etc/lsb-release .　　　//コンテナ名は修正
 ls
 cat lsb-release
 
 ### 4-12 ###
-docker run -d -p 8000:80 --name my-httpd httpd
+docker container run -d -p 8000:80 --name my-httpd httpd
 vi  index.html
 
 #index.html
@@ -88,7 +87,7 @@ echo '<title>Welcome to my homepage</title><h1>Welcome!!</h1><p>since 2020</p><p
 #Document route
 /usr/local/apache2/htdocs
 
-docker cp  ./index.html my-httpd:/usr/local/apache2/htdocs/
+docker cp　./index.html my-httpd:/usr/local/apache2/htdocs/
 
 ## ブラウザからアクセスしてみましょう （インスタンスに割り振られたIPアドレスやホスト名をコピーする）##
 http:// <ホストIPアドレス or ホスト名>:8000
