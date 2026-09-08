@@ -3,13 +3,14 @@
 ### 7-1 ###
 docker volume create myvolume
 docker volume ls
-docker run -it --mount source=myvolume,target=/myvol busybox:1 
+docker volume inspect myvolume  //参考
+docker container run -it --mount source=myvolume,target=/myvol busybox:1 
 ls /
 echo 'Hello' > /myvol/message
 cat /myvol/message
 <Ctrl+p><Ctrl+q>
 
-docker run -it --mount source=myvolume,target=/work busybox:1 
+docker container run -it --mount source=myvolume,target=/work busybox:1 
 ls /work
 cat /work/message
 <Ctrl+p><Ctrl+q>
@@ -26,7 +27,7 @@ sudo ls /var/lib/docker/volumes/myvolume/_data
 ### 7-2 ###
 cd
 mkdir binddir
-docker run -it --volume /home/ec2-user/binddir:/work busybox:1
+docker container run -it --mount type=bind,source=/home/ec2-user/binddir,target=/work busybox:1
 echo 'Hello' > /work/message
 cat /work/message
 <Ctrl+p><Ctrl+q>
@@ -35,7 +36,7 @@ ls binddir/
 cat binddir/message
 
 ###  (参考）全コンテナを一括削除 ###
-docker rm -f $(docker ps -a -q)
+docker container rm -f $(docker ps -a -q)
 
 ### （参考）全イメージを一括削除 ###
-docker rmi -f $(docker images -q)
+docker image rm -f $(docker images -q)
