@@ -87,7 +87,7 @@ echo '<title>Welcome to my homepage</title><h1>Welcome!!</h1><p>since 2020</p><p
 #Document route
 /usr/local/apache2/htdocs
 
-docker cp　./index.html my-httpd:/usr/local/apache2/htdocs/
+docker cp ./index.html my-httpd:/usr/local/apache2/htdocs/
 
 ## ブラウザからアクセスしてみましょう （インスタンスに割り振られたIPアドレスやホスト名をコピーする）##
 http:// <ホストIPアドレス or ホスト名>:8000
