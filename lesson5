@@ -113,27 +113,27 @@ docker login
 
 ### 5-9 ###
 docker image ls
-docker image push myname/web:1.0
+docker image push myname/web:1.0      //　mynameを自身のusernameに修正して実行します
 
 ### 5-10 ###
-docker image rm myname/web:1.0    // myname/web:1.0 のコンテナを削除します
+docker image rm -f myname/web:1.0     //　myname/web:1.0 のコンテナを削除します mynameは自身のusernameに修正して実行します
 docker image ls
-docker image pull myname/web:1.0       
+docker image pull myname/web:1.0      //　mynameを自身のusernameに修正して実行します
 docker image ls
 
 ### 5-11 ###
-docker image history myname/web:1.0
+docker image history myname/web:1.0   //　mynameを自身のusernameに修正して実行します
 
 ### 5-12 ###
-docker image tag myname/web:1.0 myname/web:latest
+docker image tag myname/web:1.0 myname/web:latest      //　mynameを自身のusernameに修正して実行します
 docker image ls
 
 ### 5-13 ###
-docker image save -o web.1.0.tar myname/web:1.0
+docker image save -o web.1.0.tar myname/web:1.0        //　mynameを自身のusernameに修正して実行します
 ls -lh
 
 ### 5-14 ###
-docker image rm myname/web:1.0
+docker image rm myname/web:1.0        //　mynameを自身のusernameに修正して実行します
 docker image ls
 docker image load -i web.1.0.tar
 docker image ls
