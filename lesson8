@@ -16,7 +16,7 @@ chmod +x ~/.docker/cli-plugins/docker-buildx
 
 ## 動作確認
 docker compose version
-
+docker buildx version
 
 ### 8-2 ###
 cd
@@ -41,8 +41,8 @@ myweb:
 
 ## vi を苦手な方は以下で実行してみましょう ##
 cat <<'EOF' > compose.yaml
-services: 
-myweb:
+services:
+  myweb:
     build: .
     ports:
       - "8080:80"
@@ -103,7 +103,38 @@ services:
 volumes:
     db_data: {}
     
-    
+## vi を苦手な方は以下で実行してみましょう ##
+cat <<'EOF' > compose.yaml
+services:
+  db:
+    image: mysql:8.0
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+
+volumes:
+  db_data: {}
+EOF
+
+## 動作確認をしてみましょう　##
     
 docker compose up -d
 docker compose ps
